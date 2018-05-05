@@ -88,3 +88,19 @@ class Solution(object):
             else:
                 b+=1
         return res
+
+###Plus One###
+class Solution(object):
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        sum=0
+        res=[]
+        for i in range(len(digits)):
+            sum+=digits[len(digits)-1-i]*(10**i)
+        sum+=1
+        for i in range(len(str(sum))):
+            res.append(int(str(sum)[i]))
+        return res
