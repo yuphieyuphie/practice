@@ -1,1 +1,16 @@
 ###Remove Duplicates from Sorted Array###
+class Solution(object):
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if len(nums)<2:
+            return len(nums)
+        else:
+            cur=0
+            for i in range(1,len(nums)):
+                if nums[cur]!=nums[i]:
+                    nums[cur+1]=nums[i]
+                    cur+=1 
+        return cur+1
