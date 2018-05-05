@@ -14,9 +14,7 @@ class Solution(object):
                     nums[cur+1]=nums[i]
                     cur+=1 
         return cur+1
-       
-       
-       
+              
 ###Best Time to Buy and Sell Stock II###
 class Solution(object):
     def maxProfit(self, prices):
@@ -32,7 +30,37 @@ class Solution(object):
                 if prices[i-1]<prices[i]:
                     profit+=(prices[i]-prices[i-1])
         return profit
-        
-        
-       
+              
 ###Rotate Array###
+class Solution(object):
+    def rotate(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        l=len(nums)
+        if l!=1:
+            nums[:]=nums[l-k:]+nums[:l-k]
+            
+###Contains Duplicate###
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        l=len(nums)
+        if l>len(set(nums)):
+            return(True)
+        else:
+            return(False)
+        
+###Single Number###
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return (sum(set(nums)))*2-sum(nums)
