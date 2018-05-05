@@ -15,6 +15,8 @@ class Solution(object):
                     cur+=1 
         return cur+1
        
+       
+       
 ###Best Time to Buy and Sell Stock II###
 class Solution(object):
     def maxProfit(self, prices):
@@ -22,3 +24,15 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
+        profit=0
+        if len(prices)<2:
+            return profit
+        else:
+            for i in range(1,len(prices)):
+                if prices[i-1]<prices[i]:
+                    profit+=(prices[i]-prices[i-1])
+        return profit
+        
+        
+       
+###Rotate Array###
