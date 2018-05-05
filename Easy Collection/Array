@@ -14,3 +14,11 @@ class Solution(object):
                     nums[cur+1]=nums[i]
                     cur+=1 
         return cur+1
+       
+###Best Time to Buy and Sell Stock II###
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
