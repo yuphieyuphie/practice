@@ -64,6 +64,9 @@ class Solution(object):
         :rtype: int
         """
         return (sum(set(nums)))*2-sum(nums)
+"""
+可以用xor  a^a=0, a^b!=0
+"""
 
 ###Intersection of Two Arrays II###    
     class Solution(object):
@@ -104,3 +107,53 @@ class Solution(object):
         for i in range(len(str(sum))):
             res.append(int(str(sum)[i]))
         return res
+
+###Move Zeroes###
+class Solution(object):
+    def moveZeroes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        res=[]
+        for i in range(len(nums)):
+            if nums[i]!=0:
+                res.append(nums[i])
+        diff=len(nums)-len(res)
+        for i in range(diff):
+            res.append(0)
+        nums[:]=res
+        
+###Two Sum###
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        res=[]
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if nums[i]+nums[j]==target:
+                    res.append(i)
+                    res.append(j)
+                    break
+        return res
+    """
+    用dic和enumerate
+    """
+    
+    ###Valid Sudoku###
+    class Solution(object):
+    def isValidSudoku(self, board):
+        """
+        :type board: List[List[str]]
+        :rtype: bool
+        """
+        seen=[]
+        for i,row in enumerate(board):
+            for j,val in enumerate(row):
+                if val!=".":
+                    seen+=[(val,j),(i,val),(i/3,j/3,val)]
+        return len(seen)==len(set(seen))
