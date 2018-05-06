@@ -157,3 +157,17 @@ class Solution(object):
                 if val!=".":
                     seen+=[(val,j),(i,val),(i/3,j/3,val)]
         return len(seen)==len(set(seen))
+
+###Rotate Image###
+class Solution(object):
+    def rotate(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: void Do not return anything, modify matrix in-place instead.
+        """
+        matrix[:]=zip(*matrix[::-1])
+"""
+A[::-1]翻转A
+zip(*A)=zip(A[0],A[1],...) 转置A
+[list(i) for i in zip(*A)] 
+"""
