@@ -62,3 +62,26 @@ class Solution(object):
 后面一坨可以改成
 s==s[::-1]
 """
+
+###
+
+###Implement strStr()###
+class Solution(object):
+    def strStr(self, haystack, needle):
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+        if len(needle)==0:
+            return 0
+        if needle in haystack:
+            return haystack.index(needle)
+        else:
+            return -1
+"""
+str.find(str, beg=0, end=len(string))
+Return Value
+Index if found and -1 otherwise.
+"""
+
