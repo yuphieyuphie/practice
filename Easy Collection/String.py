@@ -85,3 +85,20 @@ Return Value
 Index if found and -1 otherwise.
 """
 
+###
+
+###Longest Common Prefix###
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if not strs:
+            return ""
+        s=min(strs,key=len)
+        for i, letter in enumerate(s):
+            for word in strs:
+                if word[i]!=letter:
+                    return s[:i]
+        return s
